@@ -20,7 +20,7 @@ export default class ToDo extends React.Component<IToDoProps, IToDoState, {}> {
       contributoritems: [],
       todoitems: [],
       boarddata: {
-        lanes:[]
+        lanes:[],
       }
     };
   }
@@ -30,14 +30,14 @@ export default class ToDo extends React.Component<IToDoProps, IToDoState, {}> {
       <div className={styles.toDo}>
         <h2 className={styles.header}>{this.props.header}</h2>
         <h3>{this.state.status}</h3>
-        <Board data={this.state.boarddata} />
+        <Board data={this.state.boarddata} className= {styles.boardContainer} />
       </div>
     );
   }
 
   private convertTodoIntoBoardData() {
     var tempBoardData = {
-      lanes: []
+      lanes: [],
     };
 
     const tempLanes = this.state.todoitems.map(q => q.Project.Title);
@@ -45,7 +45,6 @@ export default class ToDo extends React.Component<IToDoProps, IToDoState, {}> {
 
     for (var i = 0; i < tempLanesUnique.length; i++) {
       var tempContributors = this.state.todoitems.filter(item => item.Project.Title === tempLanesUnique[i]);
-      debugger;
       var tempcards = [];
       for (var j = 0; j < tempContributors.length; j++) {
         var tempCard = {
