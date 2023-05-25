@@ -1,6 +1,6 @@
 ## to-do
 
-This is where you include your WebPart documentation.
+This respository will help you to build a basic To-do list using React. This can be plugged into any component which is basically developed using React
 
 ### Building the code
 
